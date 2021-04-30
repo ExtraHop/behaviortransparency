@@ -1,0 +1,30 @@
+{
+    "spec_version": "0.1",
+    "vendor_name": "Acme",
+    "software_name": "Tax Pro",
+    "software_version": "1.0.0",
+    "is_exhaustive": true,
+    "vendor_url": "https://acme-corp.com",
+    "behaviors": [
+        {
+            "type": "external_connection",
+            "purpose": "Save tax information",
+            "domain": "api.tax-pro.acme-corp.com",
+            "port": 443,
+            "cloud_provider": "microsoft-azure"
+        },
+        {
+            "type": "external_connection",
+            "purpose": "Get payroll information from BCD",
+            "domain": "workforcesoon.bcd.com",
+            "port": 443
+        },
+        {
+            "type": "external_connection",
+            "purpose": "Collect usage and crash information",
+            "documentation_url": "https://acme-corp.com/taxpro/telemetry",
+            "domain": "api.appcenter.ms",
+            "port": 443
+        }
+    ]
+}

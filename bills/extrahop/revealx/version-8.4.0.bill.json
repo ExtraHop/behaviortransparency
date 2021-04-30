@@ -1,0 +1,93 @@
+{
+    "spec_version": "0.1",
+    "software_name": "Reveal(x)",
+    "vendor_name": "ExtraHop",
+    "vendor_url": "https://extrahop.com",
+    "is_exhaustive": true,
+    "external_references": [
+        {
+            "source_name": "mitre-attck",
+            "external_id": "S0014"
+        }
+    ],
+    "behaviors": [
+        {
+            "type": "external_connection",
+            "purpose": "ExtraHop Cloud Services (US)",
+            "domain": "pdx.hopcloud.extrahop.com",
+            "ipaddr": "35.161.154.247/30",
+            "port": 443,
+            "protocol": "tcp",
+            "cloud_provider": {
+                "id": "amazon-aws",
+                "region": "us-west-2"
+            }
+        },
+        {
+            "type": "external_connection",
+            "purpose": "ExtraHop Cloud Services (EU)",
+            "domain": "fra.hopcloud.extrahop.com",
+            "ipaddr": "52.59.110.168",
+            "port": 443,
+            "protocol": "tcp",
+            "cloud_provider": {
+                "id": "amazon-aws",
+                "region": "eu-central-1"
+            }
+        },
+        {
+            "type": "external_connection",
+            "purpose": "ExtraHop Cloud Services (AU)",
+            "domain": "syd.hopcloud.extrahop.com",
+            "ipaddr": "54.66.242.25",
+            "port": 443,
+            "protocol": "tcp",
+            "cloud_provider": {
+                "id": "amazon-aws",
+                "region": "ap-southeast-2"
+            }
+        },
+        {
+            "type": "external_connection",
+            "purpose": "ExtraHop Cloud Recordstore",
+            "domain": "bigquery.googleapis.com",
+            "port": 443,
+            "protocol": "tcp",
+            "cloud_provider": "google-cloud"
+        },
+        {
+            "type": "external_connection",
+            "purpose": "ExtraHop Cloud Recordstore",
+            "domain": "oauth2.googleapis.com",
+            "port": 443,
+            "protocol": "tcp"
+        },
+        {
+            "type": "external_connection",
+            "purpose": "ExtraHop Cloud Recordstore",
+            "domain": "www.googleapis.com",
+            "port": 443,
+            "protocol": "tcp"
+        },
+        {
+            "type": "external_connection",
+            "purpose": "ExtraHop Cloud Recordstore",
+            "domain": "www.mtls.googleapis.com",
+            "port": 443,
+            "protocol": "tcp"
+        },
+        {
+            "type": "external_connection",
+            "purpose": "ExtraHop Cloud Recordstore",
+            "domain": "iamcredentials.googleapis.com",
+            "port": 443,
+            "protocol": "tcp"
+        },
+        {
+            "purpose": "Find other ExtraHop appliances",
+            "documentation_url": "https://docs.extrahop.com/example",
+            "type": "network_scan",
+            "port": 1500
+        }
+    ]
+}
