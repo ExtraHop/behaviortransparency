@@ -127,30 +127,27 @@
                     "type": "string",
                     "description": "The issuing authority of the external ID.",
                     "examples": ["dodin-apl", "fedramp", "windows-pfn", "stix"]
+                },
+                "url": {
+                    "type": "string",
+                    "description": "An absolute URL"
+                },
+                "external_id": {
+                    "type": "string",
+                    "description": "The ID of this software in the system identified by source_name."
                 }
             },
             "anyOf": [
                 {
-                    "type": "object",
-                    "properties": {
-                        "url": {
-                            "type": "string",
-                            "description": "An absolute URL"
-                        }
-                    },
-                    "required": ["url"]
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "external_id": {
-                            "type": "string",
-                            "description": "The ID of this software in the system identified by source_name."
-                        }
-                    },
+                    "description": "An ID reference into an external system",
+                    "$comment": "This comes first in the list to improve validation errors when the source_name is forgotten.",
+                    "required": ["external_id"],
                     "dependencies": {
                         "external_id": ["source_name"]
                     }
+                },
+                {
+                    "required": ["url"]
                 }
             ]
         },
