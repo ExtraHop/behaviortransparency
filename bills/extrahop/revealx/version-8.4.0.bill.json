@@ -6,8 +6,8 @@
     "is_exhaustive": true,
     "external_references": [
         {
-            "source_name": "mitre-attck",
-            "external_id": "S0014"
+            "url": "https://docs.extrahop.com/8.4",
+            "description": "Product documentation"
         }
     ],
     "behaviors": [
