@@ -84,10 +84,14 @@
             "protocol": "tcp"
         },
         {
-            "purpose": "Find other ExtraHop appliances",
-            "documentation_url": "https://docs.extrahop.com/example",
-            "type": "network_scan",
-            "port": 1500
+            "type": "external_connection",
+            "purpose": "Admin-configured Open Data Streams",
+            "documentation_url": "https://docs.extrahop.com/8.4/open-data-streams/"
+        },
+        {
+            "type": "accepts_connection",
+            "purpose": "Serve UI and REST API",
+            "protocol": "tcp"
         }
     ]
 }
