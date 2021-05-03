@@ -22,14 +22,14 @@
             "description": "The homepage of the software vendor.",
             "$ref": "#/definitions/url_web"
         },
-        "is_exhaustive": {
-            "type": "boolean",
-            "description": "This bill describes ALL the behaviors of the software expressible through the bill of behavior format. Security products MAY block or prevent any behavior that is omitted from this document."
-        },
         "external_references": {
             "description": "Links or IDs for more information about this software in other systems.",
             "type": "array",
             "items": { "$ref": "#/definitions/external_reference" }
+        },
+        "is_exhaustive": {
+            "type": "boolean",
+            "description": "This bill describes ALL the behaviors of the software expressible through the bill of behavior format. Security products MAY block or prevent any behavior that is omitted from this document."
         },
         "behaviors": {
             "description": "The behaviors that this software may perform in normal operation.",
