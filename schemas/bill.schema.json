@@ -163,15 +163,15 @@
             "type": "number",
             "minimum": 1,
             "maximum": 65535,
-            "description": "A port number"
+            "$comment": "A port number"
         },
         "protocol": {
             "type": "string",
-            "description": "A lowercase IANA protocol identifier."
+            "$comment": "A lowercase IANA protocol identifier."
         },
         "url_web": {
             "type": "string",
-            "description": "An absolute HTTP/S URL",
+            "$comment": "An absolute HTTP/S URL",
             "pattern": "^http(s)?://"
         }
     }
