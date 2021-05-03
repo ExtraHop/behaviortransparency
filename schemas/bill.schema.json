@@ -22,6 +22,10 @@
             "description": "The homepage of the software vendor.",
             "$ref": "#/definitions/url_web"
         },
+        "contact": {
+            "$ref": "#/definitions/contact",
+            "description": "Contact information for questions about this software's behavior. Either a mailto: URL or HTTP/S URL."
+        },
         "external_references": {
             "description": "Links or IDs for more information about this software in other systems.",
             "type": "array",
@@ -123,6 +127,13 @@
                 "google-cloud",
                 "microsoft-azure",
                 "oracle-cloud"
+            ]
+        },
+        "contact": {
+            "type": "string",
+            "oneOf": [
+                { "pattern": "^mailto:" },
+                { "$ref": "#/definitions/url_web" }
             ]
         },
         "external_reference": {

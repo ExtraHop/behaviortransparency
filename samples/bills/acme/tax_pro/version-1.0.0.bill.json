@@ -5,6 +5,7 @@
     "software_version": "1.0.0",
     "is_exhaustive": true,
     "vendor_url": "https://acme-corp.com",
+    "contact": "mailto:taxpro-security@acme-corp.com",
     "behaviors": [
         {
             "type": "external_connection",
