@@ -1,0 +1,11 @@
+# Vendor rules; MUST match the format:
+#
+# /bills/$vendor_id/
+/bills/extrahop/ example@extrahop.com
+
+# Non-bill-related rules.
+# These come last to ensure they take priority.
+/.vscode/ @hosting-org/bob-core
+/samples/ @hosting-org/bob-core
+/schemas/ @hosting-org/bob-core
+/CODEOWNERS @hosting-org/bob-core
