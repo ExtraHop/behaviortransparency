@@ -45,22 +45,11 @@
     "additionalProperties": false,
     "definitions": {
         "behavior": {
-            "properties": {
-                "purpose": {
-                    "type": "string",
-                    "description": "A human-readable explanation of why the software performs this behavior."
-                },
-                "documentation_url": {
-                    "description": "A link to product documentation explaining this behavior.",
-                    "$ref": "#/definitions/url_web"
-                }
-            },
             "oneOf": [
                 { "$ref": "#/definitions/behavior_accepts_connection" },
                 { "$ref": "#/definitions/behavior_external_connection" },
                 { "$ref": "#/definitions/behavior_network_scan" }
-            ],
-            "required": ["type"]
+            ]
         },
         "behavior_accepts_connection": {
             "properties": {
@@ -68,15 +57,25 @@
                     "type": "string",
                     "enum": ["accepts_connection"]
                 },
+                "purpose": { "$ref": "#/definitions/field_purpose" },
+                "documentation_url": {
+                    "$ref": "#/definitions/field_documentation_url"
+                },
                 "port": { "$ref": "#/definitions/port_number" },
                 "protocol": { "$ref": "#/definitions/protocol" }
-            }
+            },
+            "required": ["type"],
+            "additionalProperties": false
         },
         "behavior_external_connection": {
             "properties": {
                 "type": {
                     "type": "string",
                     "enum": ["external_connection"]
+                },
+                "purpose": { "$ref": "#/definitions/field_purpose" },
+                "documentation_url": {
+                    "$ref": "#/definitions/field_documentation_url"
                 },
                 "ipaddr": {
                     "type": "string",
@@ -91,7 +90,9 @@
                 "cloud_provider": {
                     "$ref": "#/definitions/cloud_provider"
                 }
-            }
+            },
+            "required": ["type"],
+            "additionalProperties": false
         },
         "behavior_network_scan": {
             "description": "The software will scan its local network.",
@@ -100,8 +101,14 @@
                     "type": "string",
                     "enum": ["network_scan"]
                 },
+                "purpose": { "$ref": "#/definitions/field_purpose" },
+                "documentation_url": {
+                    "$ref": "#/definitions/field_documentation_url"
+                },
                 "port": { "$ref": "#/definitions/port_number" }
-            }
+            },
+            "required": ["type"],
+            "additionalProperties": false
         },
         "cloud_provider": {
             "oneOf": [
@@ -169,6 +176,14 @@
                     "required": ["url"]
                 }
             ]
+        },
+        "field_documentation_url": {
+            "description": "A link to product documentation explaining this behavior.",
+            "$ref": "#/definitions/url_web"
+        },
+        "field_purpose": {
+            "type": "string",
+            "description": "A human-readable explanation of why the software performs this behavior."
         },
         "port_number": {
             "type": "number",
