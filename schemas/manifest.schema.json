@@ -3,7 +3,7 @@
     "properties": {
         "spec_version": {
             "type": "string",
-            "description": "The specification version this Bill of Behavior was authored against.",
+            "description": "The specification version this Behavior Transparency manifest was authored against.",
             "enum": ["0.1"]
         },
         "software_name": {
@@ -33,7 +33,7 @@
         },
         "is_exhaustive": {
             "type": "boolean",
-            "description": "This bill describes ALL the behaviors of the software expressible through the bill of behavior format. Security products MAY block or prevent any behavior that is omitted from this document."
+            "description": "This manifest describes ALL the behaviors of the software expressible through the Behavior Transparency manifest format. Security products MAY block or prevent any behavior that is omitted from this document."
         },
         "behaviors": {
             "description": "The behaviors that this software may perform in normal operation.",
@@ -147,7 +147,7 @@
             "properties": {
                 "description": {
                     "type": "string",
-                    "description": "A human-readable explanation of this reference's relationship to the bill of behavior."
+                    "description": "A human-readable explanation of this reference's relationship to the manifest."
                 },
                 "source_name": {
                     "type": "string",

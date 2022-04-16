@@ -1,8 +1,8 @@
 {
     "json.schemas": [
         {
-            "fileMatch": ["*.bill.json"],
-            "url": "./schemas/bill.schema.json"
+            "fileMatch": ["*.manifest.json"],
+            "url": "./schemas/bill.manifest.json"
         }
     ]
 }

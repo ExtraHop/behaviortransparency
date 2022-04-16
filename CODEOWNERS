@@ -1,9 +1,9 @@
 # Vendor rules; MUST match the format:
 #
-# /bills/$vendor_id/
-/bills/extrahop/ example@extrahop.com
+# /manifests/$vendor_id/
+/manifests/extrahop/ example@extrahop.com
 
-# Non-bill-related rules.
+# Non-manifest-related rules.
 # These come last to ensure they take priority.
 /.vscode/ @hosting-org/bob-core
 /samples/ @hosting-org/bob-core
