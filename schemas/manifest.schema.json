@@ -79,7 +79,7 @@
                 },
                 "ipaddr": {
                     "type": "string",
-                    "description": "An IPv4 or IPv6 address or CIDR block."
+                    "description": "An IPv4 or IPv6 address or CIDR block like 224.4.19.0/24"
                 },
                 "port": { "$ref": "#/definitions/port_number" },
                 "domain": {
