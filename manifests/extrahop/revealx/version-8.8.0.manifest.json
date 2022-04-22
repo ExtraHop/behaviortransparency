@@ -91,7 +91,8 @@
         {
             "type": "accepts_connection",
             "purpose": "Serve UI and REST API",
-            "protocol": "tcp"
+            "protocol": "tcp",
+            "port": 443
         }
     ]
 }
