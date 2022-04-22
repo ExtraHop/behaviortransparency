@@ -62,9 +62,15 @@
                     "$ref": "#/definitions/field_documentation_url"
                 },
                 "port": { "$ref": "#/definitions/port_number" },
+                "portRange": { "$ref": "#/definitions/port_range" },
                 "protocol": { "$ref": "#/definitions/protocol" }
             },
             "required": ["type"],
+            "oneOf": [
+                {"not": {"anyOf": [{"required":["port"]}, {"required":["portRange"]}]}},
+                {"required": ["port"]},
+                {"required": ["portRange"]}
+            ],
             "additionalProperties": false
         },
         "behavior_external_connection": {
@@ -82,6 +88,7 @@
                     "description": "An IPv4 or IPv6 address or CIDR block like 224.4.19.0/24"
                 },
                 "port": { "$ref": "#/definitions/port_number" },
+                "portRange": { "$ref": "#/definitions/port_range" },
                 "domain": {
                     "type": "string",
                     "description": "A domain name. Wildcards are permitted; more advanced patterns are not allowed."
@@ -92,6 +99,11 @@
                 }
             },
             "required": ["type"],
+            "oneOf": [
+                {"not": {"anyOf": [{"required":["port"]}, {"required":["portRange"]}]}},
+                {"required": ["port"]},
+                {"required": ["portRange"]}
+            ],
             "additionalProperties": false
         },
         "behavior_network_scan": {
@@ -105,9 +117,15 @@
                 "documentation_url": {
                     "$ref": "#/definitions/field_documentation_url"
                 },
-                "port": { "$ref": "#/definitions/port_number" }
+                "port": { "$ref": "#/definitions/port_number" },
+                "portRange": { "$ref": "#/definitions/port_range" }
             },
             "required": ["type"],
+            "oneOf": [
+                {"not": {"anyOf": [{"required":["port"]}, {"required":["portRange"]}]}},
+                {"required": ["port"]},
+                {"required": ["portRange"]}
+            ],
             "additionalProperties": false
         },
         "cloud_provider": {
@@ -190,6 +208,12 @@
             "minimum": 1,
             "maximum": 65535,
             "$comment": "A port number"
+        },
+        "port_range": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/port_number" },
+            "minItems": 2,
+            "maxItems": 2
         },
         "protocol": {
             "type": "string",
